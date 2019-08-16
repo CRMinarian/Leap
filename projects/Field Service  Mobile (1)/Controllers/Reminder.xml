@@ -1,0 +1,49 @@
+﻿<Reminder>
+  <Items>
+    <ReminderComponent>
+      <Id>2a33c5bc-2c9a-4a67-9378-a6f0a6f4ef4b</Id>
+      <Binding>appointment</Binding>
+      <StartDateField>scheduledstart</StartDateField>
+      <EndDateField>scheduledend</EndDateField>
+      <DescriptionField>description</DescriptionField>
+      <Fetch version="1.0">
+        <entity name="appointment">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="3"/>
+            <condition attribute="ownerid" operator="eq-userid"/>
+          </filter>
+        </entity>
+      </Fetch>
+    </ReminderComponent>
+    <ReminderComponent>
+      <Id>024da1f1-1394-45ae-890a-3393c881e454</Id>
+      <Binding>task</Binding>
+      <StartDateField>scheduledstart</StartDateField>
+      <EndDateField>scheduledend</EndDateField>
+      <DescriptionField>description</DescriptionField>
+      <Fetch version="1.0">
+        <entity name="task">
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0"/>
+            <condition attribute="ownerid" operator="eq-userid"/>
+          </filter>
+        </entity>
+      </Fetch>
+    </ReminderComponent>
+    <ReminderComponent>
+      <Id>ed4f4101-c141-4687-9eb6-505eec362833</Id>
+      <Binding>bookableresourcebooking</Binding>
+      <StartDateField>createdon</StartDateField>
+      <EndDateField>endtime</EndDateField>
+      <DescriptionField>a1a_notification</DescriptionField>
+      <Fetch version="1.0">
+        <entity name="bookableresourcebooking">
+          <filter type="and">
+            <condition attribute="bookingstatus" operator="eq" value="f16d80d1-fd07-4237-8b69-187a11eb75f9" uitype="bookingstatus" uiname="Scheduled"/>
+            <condition attribute="ownerid" operator="eq-userid"/>
+          </filter>
+        </entity>
+      </Fetch>
+    </ReminderComponent>
+  </Items>
+</Reminder>

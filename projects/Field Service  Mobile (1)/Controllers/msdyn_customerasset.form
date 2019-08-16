@@ -1,0 +1,39 @@
+﻿<EntityForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:dummy="0" flexi="0" fleximode="1" fullscreen="0" resize="0" version="2">
+  <IsContactForm>false</IsContactForm>
+  <EntityName>msdyn_customerasset</EntityName>
+  <CamelCase>msdyn_customerasset</CamelCase>
+  <PrimaryCommands>!defcmd</PrimaryCommands>
+  <ClassBinding/>
+  <EnabledWorkflows>OnLoadEnabled OnChangeEnabled OnSaveEnabled OnExecuteCommand OnCanExecuteCommand</EnabledWorkflows>
+  <SerializedChildrenV2>
+    <FormTab xsi:type="DetailTab">
+      <Name>General</Name>
+      <SerializedChildren>
+        <DetailItem SchemaName="msdyn_product"/>
+        <DetailItem SchemaName="msdyn_name"/>
+        <DetailItem SchemaName="msdyn_account"/>
+        <DetailItem SchemaName="msdyn_parentasset"/>
+      </SerializedChildren>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Assets/Equipment List</Name>
+      <Binding SchemaName="msdyn_customerasset.msdyn_masterasset"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Work Orders List</Name>
+      <Binding SchemaName="msdyn_workorder.msdyn_customerasset"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Three-Dimensional Models List (Many)</Name>
+      <Binding SchemaName="msdyn_3dmodel.msdyn_customerassetid.msdyn_msdyn_customerasset_msdyn_3dmodel.msdyn_3dmodelid"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Notes List</Name>
+      <Binding SchemaName="annotation.objectid"/>
+    </FormTab>
+    <FormTab xsi:type="AssociatedTab">
+      <Name>Activity List</Name>
+      <Binding SchemaName="activity.regardingobjectid"/>
+    </FormTab>
+  </SerializedChildrenV2>
+</EntityForm>
